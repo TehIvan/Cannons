@@ -29,7 +29,6 @@ import at.pavlov.cannons.Enum.FakeBlockType;
 import at.pavlov.cannons.Enum.ProjectileCause;
 import at.pavlov.cannons.config.Config;
 import at.pavlov.cannons.container.DeathCause;
-import at.pavlov.cannons.container.ItemHolder;
 import at.pavlov.cannons.container.SoundHolder;
 import at.pavlov.cannons.container.SpawnEntityHolder;
 import at.pavlov.cannons.container.SpawnMaterialHolder;
@@ -187,7 +186,7 @@ public class CreateExplosion {
 				this.plugin.getServer().getPluginManager().callEvent(piercingEvent);
 
 				// create bukkit event
-				EntityExplodeEvent event = new EntityExplodeEvent(projectile_entity, impactLoc, piercingEvent.getBlockList(), 1.0f);
+				EntityExplodeEvent event = new EntityExplodeEvent(projectile_entity, impactLoc, piercingEvent.getBlockList(), 1.0f, ExplosionResult.DESTROY_WITH_DECAY);
 				this.plugin.getServer().getPluginManager().callEvent(event);
 
 				this.plugin.logDebug("was the cannons explode event canceled: " + event.isCancelled());
@@ -1213,7 +1212,7 @@ public class CreateExplosion {
 	}
 
 	// apply to rocket
-	final Firework fw = (Firework) world.spawnEntity(projectile_entity.getLocation(), EntityType.FIREWORK);
+	final Firework fw = (Firework) world.spawnEntity(projectile_entity.getLocation(), EntityType.FIREWORK_ROCKET);
 	FireworkMeta meta = fw.getFireworkMeta();
 
 	meta.addEffect(fwb.build());
