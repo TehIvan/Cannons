@@ -2798,4 +2798,5 @@ public class Cannon
     public void setTimestampAimingMode(long timestampAimingMode) {
         this.timestampAimingMode = timestampAimingMode;
     }
+
 }

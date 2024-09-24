@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.UUID;
 import java.util.logging.Logger;
 
@@ -452,4 +453,5 @@ public final class Cannons extends JavaPlugin
 	public String getWhitelistDatabase() {
 		return whitelistDatabase;
 	}
+
 }

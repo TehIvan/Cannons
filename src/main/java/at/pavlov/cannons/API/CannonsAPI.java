@@ -125,11 +125,6 @@ public class CannonsAPI {
     }
 
 
-    public void setCannonAngle(Cannon cannon, double horizontal, double vertical)
-    {
-        //plugin.getAiming().
-    }
-
     /**
      * removes a cannon from the list
      * @param uid UID of the cannon
